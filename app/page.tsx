@@ -63,6 +63,11 @@ export default function Home() {
               </a>
             </p>
 
+            <p className="inline-block border-2 border-rule bg-foreground px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] text-background transition-colors hover:border-accent hover:bg-accent mt-8">
+              South Windsor Residents: Make Yourself Heard
+            </p>
+
+            {/*
             <div className="mt-8">
               <a
                 href="#"
@@ -71,6 +76,7 @@ export default function Home() {
                 South Windsor Residents: Make Yourself Heard
               </a>
             </div>
+            */}
           </div>
         </header>
 
@@ -132,7 +138,7 @@ export default function Home() {
               </p>
               <ol className="mt-2 list-decimal list-inside text-lg leading-loose text-muted">
                 <li className="pt-2">
-                  Filling out the
+                  Filling out our
                   {" "}<a
                   href=""
                   target="_blank"
@@ -141,7 +147,7 @@ export default function Home() {
                   >
                     <b>voter issues survey</b>
                   </a>
-                  {" "}(open until <b>June 21st</b>)
+                  {" "}after we release it!
                 </li>
                 <li>
                   Scheduling a time to speak with us, or attending our{" "}
