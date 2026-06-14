@@ -150,7 +150,16 @@ export default function Home() {
                   {" "}after we release it!
                 </li>
                 <li>
-                  Scheduling a time to speak with us, or attending our{" "}
+                  Scheduling a time to{" "} 
+                  <a
+                  href="https://calendar.app.google/AGYZ73ntLcFnbBXu9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                  >
+                    <b>speak with us</b>
+                  </a>
+                  , or attending our{" "}
                   <button
                     type="button"
                     onClick={() => openAndFlashFaq(openHearingsIndex)}
@@ -160,7 +169,13 @@ export default function Home() {
                   </button>
                 </li>
                 <li className="pb-2">
-                  Writing us an email!
+                  Writing us an <a
+                  href="mailto:info@south-windsor-voter-summaries.com"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                  >
+                    <b>email</b>
+                  </a>!
                 </li>
               </ol>
               <p className="text-lg leading-relaxed text-muted">
@@ -210,6 +225,9 @@ const faqs: { q: string; a: React.ReactNode }[] = [
         lowering information barriers can increase political participation.
         I&apos;ve paid to host this website and promote this initiative out of
         pocket, with all costs totalling to less than $1,000.
+        <br></br>
+        <br></br>
+        If you have additional questions, please reach us at info@south-windsor-voter-summaries.com
       </>
     ),
   },
