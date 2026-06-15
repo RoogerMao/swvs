@@ -90,11 +90,11 @@ export default function Home() {
             <div className="mx-auto mt-6 max-w-2xl text-center">
               {/* Intentionally left blank — copy to come */}
               <p className="text-lg leading-relaxed text-muted">
-                <i><b>Who</b> are the candidates in the <b>August party primaries</b>, and <b>what</b> do they stand for?</i>
+                <i><b>Who are</b> the <b>candidates</b> on our <b>ballots</b>, and <b>what</b> do they stand for?</i>
                 {" "}<b>Finding answers</b> to these questions has grown <b>increasingly difficult</b> for voters.
-                {" "}Through this initiative, a group of <b>SWHS Students</b> will try to fill some of this gap.
-                {" "}We will <b>interview</b> community members, <b>conduct</b> online <b>research</b>, and <b>contact campaigns</b> for statements to syntheisze <b>short, neutral</b> articles for voters.
-                {" "}<b>Our goal is to inform, not persuade</b>.
+                {" "}Through this initiative, a group of <b>SWHS students</b> will try to fill some of this gap.
+                {" "}We will <b>interview</b> community members, <b>conduct</b> online <b>research</b>, and speak with <b>campaigns</b> to syntheisze <b>short, neutral articles</b> for <b>voters</b>.
+                {" "}We will cover the <b>August party primaries</b> this summer, and hope to extend our work into the fall general elections. <b>Our goal is to inform, not persuade</b>.
               </p>
 
               {/* Two separate CTAs */}
@@ -124,10 +124,7 @@ export default function Home() {
           </div>
 
           <div className="px-4 py-12 transition-colors hover:bg-black/[0.04] sm:flex-1 sm:py-16">
-            <SectionLabel
-              id="opinions"
-              className={opinionsFlash ? "text-accent" : "text-foreground"}
-            >
+            <SectionLabel id="opinions" underline={opinionsFlash}>
               Voice <span className="text-accent">Your Concerns</span>
             </SectionLabel>
 
@@ -220,14 +217,14 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         Hey! My name is Roger Mao, and I graduated from SWHS in 2025. I&apos;m a
-        rising sophomore at Brown, and I&apos;m running this opportunity{" "}
-        <b>independent of any party or candidate</b>. I want to see how much
+        rising sophomore at Brown, and I&apos;m running this opportunity for 
+        SWHS students <b>independent of any party or candidate</b>. I want to see how much
         lowering information barriers can increase political participation.
         I&apos;ve paid to host this website and promote this initiative out of
-        pocket, with all costs totalling to less than $1,000.
+        pocket, with costs totalling to less than $1,000.
         <br></br>
         <br></br>
-        If you have additional questions, please reach us at info@south-windsor-voter-summaries.com
+        If you have additional questions, please email us at info@south-windsor-voter-summaries.com!
       </>
     ),
   },
@@ -235,25 +232,39 @@ const faqs: { q: string; a: React.ReactNode }[] = [
     q: "What races are you covering?",
     a: (
       <>
-        For the sake of scale and due to facilitator availability, this project
-        will cover the August party primaries South Windsor residents can
-        participate in. This initiative expected to cover the Republican
-        primaries for Governor, Lieutenant Governor, and the 1st Congressional
-        District, alongside the Democratic primaries for the 1st Congressional
-        District and Governor.{" "}
+        This project will cover the competitive primaries (i.e., multiple candidates) 
+        South Windsor residents can participate in. We started this  
+        initiative expecting to cover: <br></br><br></br>
+        {" "}1. The Democratic and Republican primaries for Governor<br></br>
+        2. The Republican primary for Lieutenant Governor<br></br>
+        3. The Democratic and Republican primaries for the 1st Congressional District<br></br><br></br>
+        However, the Republican primary for the{" "} 
         <a
-          href="https://ctmirror.org/2026/05/16/ryan-fazio-wins-the-ct-gop-nomination-for-governor/"
+          href="https://ctmirror.org/2026/05/15/ct-gop-opens-convention-fazio-mccaughey/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >1st Congressional District</a>,{" "}  
+        <a
+          href="https://ctmirror.org/2026/05/15/ct-gop-opens-convention-fazio-mccaughey/"
           target="_blank"
           rel="noopener noreferrer"
           className={linkClass}
         >
-          <b>However, the Republican primaries resolved on May 16th, 2026.</b>
+          Lieutenant Governor, and Governor <b>resolved on May 16th, 2026.</b> 
         </a>{" "}
-        Although this leaves only Democratic primaries to cover,{" "}
-        <b>we would love to hear concerns from all voters</b>, and will record
-        them for future coverage by <i>The Bobcat Prowl</i>. This initiative, if
-        taken up by another facilitator, may also extend into the fall for the
-        general elections.
+        Nonetheless,{" "} <b>we want to hear concerns from all voters</b>. 
+      </>
+    ),
+  },
+  {
+    q: "What will you use the survey results for?",
+    a: (
+      <>
+        We will determine our coverage based on student interest and voters&apos;
+        greatest concerns. The information provided by the survey will help 
+        us identify the latter, and we will use it for both the current primaries and 
+        fall general elections. 
       </>
     ),
   },
@@ -327,17 +338,32 @@ function SectionLabel({
   children,
   id,
   className = "text-foreground",
+  underline,
 }: {
   children: React.ReactNode;
   id?: string;
   className?: string;
+  /** When provided, renders an animated green underline that draws in when true. */
+  underline?: boolean;
 }) {
   return (
     <h2
       id={id}
       className={`text-center text-2xl font-extrabold leading-[1.05] tracking-tight transition-colors duration-300 sm:text-4xl md:text-5xl ${className}`}
     >
-      {children}
+      {underline === undefined ? (
+        children
+      ) : (
+        <span className="relative inline-block">
+          {children}
+          <span
+            aria-hidden="true"
+            className={`pointer-events-none absolute -bottom-1 left-0 h-1 w-full origin-left rounded-full bg-accent transition-transform duration-500 ease-out ${
+              underline ? "scale-x-100" : "scale-x-0"
+            }`}
+          />
+        </span>
+      )}
     </h2>
   );
 }
