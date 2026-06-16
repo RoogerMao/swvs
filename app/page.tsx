@@ -63,20 +63,15 @@ export default function Home() {
               </a>
             </p>
 
-            <p className="inline-block border-2 border-rule bg-foreground px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] text-background transition-colors hover:border-accent hover:bg-accent mt-8">
-              South Windsor Residents: Make Yourself Heard
-            </p>
-
-            {/*
             <div className="mt-8">
               <a
-                href="#"
+                target="_blank"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScISnbSj9_Lh95w_o0l794Or00e7mFlG038Li7RkYM4wTX72Q/viewform"
                 className="inline-block border-2 border-rule bg-foreground px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] text-background transition-colors hover:border-accent hover:bg-accent"
               >
                 South Windsor Residents: Make Yourself Heard
               </a>
             </div>
-            */}
           </div>
         </header>
 
@@ -137,14 +132,14 @@ export default function Home() {
                 <li className="pt-2">
                   Filling out our
                   {" "}<a
-                  href=""
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScISnbSj9_Lh95w_o0l794Or00e7mFlG038Li7RkYM4wTX72Q/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={linkClass}
                   >
                     <b>voter issues survey</b>
                   </a>
-                  {" "}after we release it!
+                  !
                 </li>
                 <li>
                   Scheduling a time to{" "} 
